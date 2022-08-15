@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+}
+
+.wrapper{
+    max-width: 1000px;
+    width: 100vw;
+    margin: auto;
+}
+
+#root{
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+        url('./../../public/images/kicking_sun.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
