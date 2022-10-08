@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+section.projects{
+    width: 100%; 
+    height: 100vh;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-direction: column;
+    .projects-head {
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        .pj-title-sec{
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1{
+                font-size: 2.2rem;
+                font-weight: 100;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 200%;
+                    position: relative;
+                    top: 0;
+                    right: 50%;
+                    height: 3px;
+                    background-color: #000;
+                    margin-top: .6rem;
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+
+    .projects-body{
+        height: 65%;
+        // background-color: aquamarine;
+        position: relative;
+
+        // .pj-pad{
+        //     width: 100px;
+        //     height: 100px;
+        //     position: absolute;
+            
+        //     &:nth-child(odd){
+        //         background-color: green;
+        //     }
+        //     &:nth-child(even){
+        //         background-color: red;
+        //     }
+
+            
+        //     &:nth-child(1){
+        //         top: 50%;
+        //         left: 50%;
+        //         z-index: 3;
+        //         transform: translate(-50%, -50%);
+        //     }
+
+        //     &:nth-child(2){
+        //         top: 55%;
+        //         left: 60%;
+        //         z-index: 2;
+        //         transform: translate(-50%, -50%);
+        //     }
+
+        //     &:nth-child(3){
+        //         top: 60%;
+        //         left: 70%;
+        //         z-index: 1;
+        //         transform: translate(-50%, -50%);
+        //     }
+
+        //     &:nth-child(4){
+        //         top: 55%;
+        //         left: 40%;
+        //         z-index: 0;
+        //         transform: translate(-50%, -50%);
+        //     }
+
+        // }
+
+
+
+    }
+
+    .projects-foot{
+        height: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button{
+            width: 5rem;
+            height: 1.5rem;
+            padding: 0 10px 0 10px;
+            outline: none;
+            border: none;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    
+}
+
+
+
+.projects-back{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    z-index: -2;
+    height: 100vh;
+    // to darken the background picture
+    background-image: url(../assets/images/stomping\ the\ sun.jpg);
+    filter: brightness(120%) contrast(0.8);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position:fixed;
+    top: 0;
+    left: 0;
+
+}
