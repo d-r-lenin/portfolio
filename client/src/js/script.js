@@ -1,3 +1,13 @@
+$("html").ready(function() {
+    // get width and height of the window and set it to the html element
+    const width = $(window).width();
+    const height = $(window).height();
+    $("html").css("width", width);
+    $("html").css("height", height);
+    $("body").css("width", width);
+    $("body").css("height", height);
+});
+
 
 // menu toggle
 $(".burger-menu").click(function() {
@@ -63,3 +73,27 @@ function closePopup() {
         }, 500);
     }, 500);
 }
+
+
+// $(function() {    
+//     if (/ipad|iphone/gi.test(window.navigator.userAgent)) {
+//     var events = "abort blur focus input scroll submit touchstart touchmove";
+//     $("form, input").on(events, function(e) {
+//       return (function(window, elem, w, h) {
+//                var vh = window.getComputedStyle(elem,null).getPropertyValue(h);
+//                var vw = window.getComputedStyle(elem,null).getPropertyValue(w);
+//                var vwh = { 
+//                            "documentWidth": vw, 
+//                            "documentHeight": vh, 
+//                            "windowInnerWidth": window.innerWidth, 
+//                            "windowInnerHeight": window.innerHeight
+//                          };
+//                console.log(vwh);
+//                var _vwh = document.getElementsByTagName("body")[0];
+//                _vwh.width = vwh.windowInnerWidth;
+//                 _vwh.height = vwh.windowInnerHeight;
+//                return vwh 
+//               }(window, document.documentElement, "width", "height"));
+//     }).focus();
+//     };
+// })

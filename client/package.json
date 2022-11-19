@@ -14,7 +14,7 @@
     "watch:pictures": "onchange ./src/assets/**/* -- npm run copy:pictures",
     "watch:js": "onchange ./src/js/**/* -- npm run copy:js",
     "watch:css" : "onchange ./src/css/**/* -- npm run copy:css",
-    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch:sass": "sass  --no-source-map --watch src/sass/style.scss:public/css/style.css",
     "watch": "npm-run-all --parallel watch:*",
     "serve": "browser-sync start --server public --files public",
     "ohtml": "ohtml --path ./public --port 3000 --file index.html",

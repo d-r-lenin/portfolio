@@ -3,7 +3,7 @@ header{
     display: flex;
     // display: none;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     flex-wrap: wrap;
 
     a{
@@ -338,7 +338,7 @@ header{
     margin: 0;
     padding: 0;
     z-index: -1;
-    height: 100vh;
+    height: 100%;
     // to darken the background picture
     background-image: url(../assets/images/kicking\ sun.jpg);
     filter: brightness(35%);
