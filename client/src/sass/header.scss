@@ -1,6 +1,7 @@
 header{
     color: #fff;
     display: flex;
+    // display: none;
     flex-direction: column;
     height: 100vh;
     flex-wrap: wrap;
@@ -332,6 +333,7 @@ header{
 
 
 .header-back{
+    // display: none;// 
     width: 100vw;
     margin: 0;
     padding: 0;
@@ -345,6 +347,6 @@ header{
     background-size: cover;
     position: absolute;
     top: 0;
-    left: 0;
+    // left: ;
 
 }
