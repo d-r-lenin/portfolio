@@ -1,6 +1,2 @@
 node_modules
 client/node_modules
-./client/public
-client/public
-client/public/index.html
-client/public/index.html
