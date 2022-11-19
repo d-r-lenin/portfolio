@@ -2,6 +2,7 @@
 @use './header.scss';
 @use './projects.scss';
 @use './skills.scss';
+@use './contact.scss';
 
 *{ 
     margin: 0;
@@ -22,13 +23,55 @@ body{
 
 
 .wrapper{
-    max-width: 900px;
+    // max-width: 900px;
     width: 100vw;
+    height: 100vh;
     margin: 0 auto;
+    position: relative;
+    // snap scrolling effect
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    .section {
+        scroll-snap-align: start;
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+    }
+
 }
+
 
 img {
     width: 100px;
+}
+
+#popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: .4s ;
+
+    &.open{
+        opacity: 1;
+        height: 3rem;
+    }
+
 }
 
 

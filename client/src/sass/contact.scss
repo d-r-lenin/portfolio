@@ -1,0 +1,24 @@
+footer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .foot-left{
+        Background-color: rgb(255, 198, 198);
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .foot-right{
+        background-color: goldenrod;
+        width: 50%;
+        height: 100%;
+        display: flex;
+
+    }
+
+}
