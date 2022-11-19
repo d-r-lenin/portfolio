@@ -1,0 +1,155 @@
+section.skills {
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: rgb(243, 243, 243);
+}
+section.skills .skills-head {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+section.skills .skills-head .sk-title-sec {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.skills .skills-head .sk-title-sec h1 {
+  font-size: 2.2rem;
+  font-weight: 100;
+}
+section.skills .skills-head .sk-title-sec h1::after {
+  content: "";
+  display: block;
+  width: 400%;
+  position: relative;
+  top: 0;
+  right: 150%;
+  height: 3px;
+  background-color: rgb(243, 243, 243);
+  margin-top: 0.6rem;
+  border-radius: 100%;
+}
+section.skills .skills-body {
+  height: 70%;
+  margin-top: 5%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.skills .skills-body .skills-holder {
+  height: 100%;
+  width: 95%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0;
+}
+section.skills .skills-body .skills-holder .skill-pad-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad {
+  height: 3em;
+  width: 10em;
+  display: flex;
+}
+section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+}
+section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-icon img {
+  width: 100%;
+  height: 100%;
+}
+section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-left: 0.5em;
+}
+section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-content .skill-name {
+  height: 38%;
+  width: 100%;
+}
+section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-content .skill-name h3 {
+  font-size: 1.2rem;
+  font-weight: 100;
+  max-width: 10ch;
+}
+section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-content .skill-rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+}
+section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-content .skill-rating img {
+  width: 0.8em;
+  height: 0.8em;
+}
+@media screen and (max-width: 768px) {
+  section.skills .skills-head .sk-title-sec h1 {
+    font-size: 1.5rem;
+  }
+  section.skills .skills-body .skills-holder {
+    gap: 1em;
+  }
+  section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad {
+    height: 2.5em;
+    width: 8em;
+  }
+  section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-icon {
+    width: 30%;
+  }
+  section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-icon img {
+    width: 100%;
+    height: 100%;
+  }
+  section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-content {
+    margin-left: 0.5em;
+  }
+  section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-content .skill-name h3 {
+    font-size: 1rem;
+    max-width: 10ch;
+  }
+  section.skills .skills-body .skills-holder .skill-pad-wrap .skill-pad .skill-content .skill-rating img {
+    width: 0.6em;
+    height: 0.6em;
+  }
+}
+
+.skills-back {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 200vh;
+  left: 0;
+}
+.skills-back .skills-back-img {
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/images/IMG20200303180021.jpg);
+  filter: brightness(50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: scale(3);
+}
