@@ -62,13 +62,34 @@ app.get("/admin", async (req, res) => {
         <html>
         <head>
             <title>Admin Page</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.9.2/jsoneditor.min.css" integrity="sha512-brXxIa/fpMfluh8HUWyrNssKy/H0oRzA0HhmipgfVwbXPamMUTZn1jEsvoGGwJYCRpSx4idujdul4vFwWgPROA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.9.2/jsoneditor.min.js" integrity="sha512-MP2pEPP3BGw032ovuAsX6yTu7O4J6L3YTXuyq3IpR+LuwRun9BBjOeeIKgO3bRiNlI88x3oCVb9I1/1+xmvFIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         </head>
         <body>
             <h1>Admin Page</h1>
-            <form action="/admin/content/update" method="POST">
-                    <textarea name="content"">${JSON.stringify(file.data)}</textarea>
+            <form action="/admin/content/update" id="json-form" method="POST">
+                <div id="json-edit"></div>    
                 <input type="submit" />
             </form>
+            <script>
+                const container = document.getElementById("json-edit");
+                const options = {};
+                const editor = new JSONEditor(container, options);
+                editor.set(${JSON.stringify(file.data)});
+
+                const form = document.getElementById("json-form");
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    const content = editor.get();
+                    const input = document.createElement("input");
+                    input.setAttribute("type", "hidden");
+                    input.setAttribute("name", "content");
+                    input.setAttribute("value", JSON.stringify(content));
+                    form.appendChild(input);
+                    form.submit();
+                });
+
+            </script>
         </body>
         </html>
         `;
