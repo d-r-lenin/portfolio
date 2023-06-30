@@ -8,6 +8,16 @@ $("html").ready(function() {
     $("body").css("height", height);
 });
 
+const cas = new Carousel({
+    parentClass: "project-cas",
+    childClass: "project-card",
+    activeClass: "selected-card",
+    sqx: 3,
+    sqy: 0.5,
+});
+
+
+
 
 // menu toggle
 $(".burger-menu").click(function() {
@@ -28,24 +38,11 @@ $('.nav-bar a').click(function() {
 const cards = $('.project-card');
 
 $('.pj-nav-btn-l').click(function() {
-    const current = $('.selected-card');
-    console.log(current.prev());
-    if(current.prev().length === 0) {
-        showPopup('beginning of the list');
-        return;
-    }
-    current.toggleClass('selected-card');
-    current.prev().toggleClass('selected-card');
+    cas.move('l');
 });
 
 $('.pj-nav-btn-r').click(function() {
-    const current = $('.selected-card');
-    if(current.next().length === 0) {
-        showPopup('End of the list');
-        return;
-    }
-    current.toggleClass('selected-card');
-    current.next().toggleClass('selected-card');
+    cas.move('r');
 });
 
 //  project card show all button
@@ -75,6 +72,7 @@ function closePopup() {
 }
 
 
+
 // $(function() {    
 //     if (/ipad|iphone/gi.test(window.navigator.userAgent)) {
 //     var events = "abort blur focus input scroll submit touchstart touchmove";
@@ -97,3 +95,5 @@ function closePopup() {
 //     }).focus();
 //     };
 // })
+
+

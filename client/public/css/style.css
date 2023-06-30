@@ -375,43 +375,45 @@ section.projects .projects-body .pj-nav-btns button.pj-nav-btn-r {
 section.projects .projects-body .pj-nav-btns button.pj-nav-btn-r:hover {
   border-left: 2rem solid rgb(150, 150, 150);
 }
-section.projects .projects-body ul {
+section.projects .projects-body .project-cas {
   height: 70%;
   width: 95%;
-  max-width: 400px;
-  display: flex;
+  position: relative;
   transition: 0.3s;
 }
-section.projects .projects-body ul li {
-  width: 0;
-  height: 100%;
+section.projects .projects-body .project-cas .project-card {
+  min-width: 18rem;
+  min-height: 13rem;
   overflow: hidden;
   display: inline-block;
-  color: transparent;
-  transition: 0.2s;
+  position: absolute;
+  background-color: rgb(129, 129, 129);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
 }
-section.projects .projects-body ul li .project-card-body {
-  display: flex;
+section.projects .projects-body .project-cas .project-card:not(.selected-card) {
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+}
+section.projects .projects-body .project-cas .project-card .project-card-title {
   color: #eee;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  background-color: rgb(100, 100, 100);
-}
-section.projects .projects-body ul li .project-card-body .project-card-title {
   width: 100%;
   height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section.projects .projects-body ul li .project-card-body .project-card-title h2 {
+section.projects .projects-body .project-cas .project-card .project-card-title h2 {
   font-size: 1.6rem;
   font-weight: 100;
 }
-section.projects .projects-body ul li .project-card-body .project-card-title ::after {
+section.projects .projects-body .project-cas .project-card .project-card-title ::after {
   content: "";
   display: block;
   width: 200%;
@@ -423,21 +425,21 @@ section.projects .projects-body ul li .project-card-body .project-card-title ::a
   margin-top: 0.5rem;
   border-radius: 100%;
 }
-section.projects .projects-body ul li .project-card-body .project-card-description {
+section.projects .projects-body .project-cas .project-card .project-card-description {
   width: 100%;
   height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section.projects .projects-body ul li .project-card-body .project-card-description p {
+section.projects .projects-body .project-cas .project-card .project-card-description p {
   margin: 1rem;
   font-weight: 100;
   color: #ddd;
   text-align: center;
   max-width: 80ch;
 }
-section.projects .projects-body ul li .project-card-body .project-card-skils {
+section.projects .projects-body .project-cas .project-card .project-card-skils {
   width: 100%;
   height: 10%;
   display: flex;
@@ -445,7 +447,7 @@ section.projects .projects-body ul li .project-card-body .project-card-skils {
   align-items: center;
   gap: 1rem;
 }
-section.projects .projects-body ul li .project-card-body .project-card-skils .project-card-skil {
+section.projects .projects-body .project-cas .project-card .project-card-skils .project-card-skil {
   border-radius: 0.5rem;
   background-color: rgb(150, 150, 150);
   color: #eee;
@@ -456,13 +458,13 @@ section.projects .projects-body ul li .project-card-body .project-card-skils .pr
   font-size: 0.8rem;
   padding: 0.08rem 0.5rem;
 }
-section.projects .projects-body ul li .project-card-body .project-card-skils .project-card-skil:hover {
+section.projects .projects-body .project-cas .project-card .project-card-skils .project-card-skil:hover {
   color: #000;
   background-color: #eee;
   cursor: none;
   padding: 0.08rem 0.8rem;
 }
-section.projects .projects-body ul li .project-card-body .project-card-links {
+section.projects .projects-body .project-cas .project-card .project-card-links {
   width: 100%;
   height: 10%;
   display: flex;
@@ -470,28 +472,17 @@ section.projects .projects-body ul li .project-card-body .project-card-links {
   align-items: center;
   gap: 1rem;
 }
-section.projects .projects-body ul li .project-card-body .project-card-links a {
+section.projects .projects-body .project-cas .project-card .project-card-links a {
   color: #eee;
   text-decoration: none;
   transition: 0.3s;
   font-size: 0.8rem;
 }
-section.projects .projects-body ul li .project-card-body .project-card-links a:hover {
+section.projects .projects-body .project-cas .project-card .project-card-links a:hover {
   color: rgb(134, 134, 134);
 }
-section.projects .projects-body ul li .project-card-body .project-card-links a :visited {
+section.projects .projects-body .project-cas .project-card .project-card-links a :visited {
   color: rgb(59, 59, 59);
-}
-section.projects .projects-body ul li.selected-card {
-  color: #000;
-  width: 100%;
-  height: 100%;
-}
-section.projects .projects-body ul li:nth-child(odd) {
-  background-color: #00f;
-}
-section.projects .projects-body ul li:nth-child(even) {
-  background-color: #f00;
 }
 @keyframes slideToPoss {
   50% {
