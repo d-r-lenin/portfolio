@@ -1,20 +1,20 @@
+let content = null;
 $("html").ready(function() {
     // get width and height of the window and set it to the html element
     const width = $(window).width();
     const height = $(window).height();
+    $.getJSON('./json/content.json', function(data) {
+        content = data;
+        loadContents(content);
+        setupCas();
+    }); 
     $("html").css("width", width);
     $("html").css("height", height);
     $("body").css("width", width);
     $("body").css("height", height);
 });
 
-const cas = new Carousel({
-    parentClass: "project-cas",
-    childClass: "project-card",
-    activeClass: "selected-card",
-    sqx: 3,
-    sqy: 0.5,
-});
+
 
 
 
@@ -33,23 +33,7 @@ $('.nav-bar a').click(function() {
 });
 
 
-
-// card flip
 const cards = $('.project-card');
-
-$('.pj-nav-btn-l').click(function() {
-    cas.move('l');
-});
-
-$('.pj-nav-btn-r').click(function() {
-    cas.move('r');
-});
-
-//  project card show all button
-$('.pj-show-all-btn').click(function() {
-    
-});
-
 
 // popup 
 function showPopup (msg) {
@@ -70,6 +54,61 @@ function closePopup() {
         }, 500);
     }, 500);
 }
+
+
+
+// load contents 
+function loadContents (contents){ 
+    
+    $(".dat-name").text(contents.name);
+    $(".dat-subject").text(contents.subject);
+
+    // contacts
+    $(".email-link").attr('href', `mailto:${contents.contact.email}`);
+    $(".linkedin-link").attr('href', contents.contact.linkedin);
+    $(".phone-link").attr('href', `tel:${content.contact.phone.replaceAll(' ', '')}`);
+    $(".github-link").attr('href', contents.contact.github);
+
+    // bio
+    $(".dat-bio").text(contents.bio);
+
+    // projects
+    contents.projects.forEach((project, index) => {
+        const element = $(`
+            <li class="project-card ${index == 0? 'selected-card': ''}">
+                        <div class="project-card-body">
+                            <div class="project-card-title">
+                                <h2 class="dat-projects-name" >${project.name}</h2>
+                            </div>
+                            <div class="project-card-description dat-projects-description">
+                                <p> ${project.description }</p>
+                            </div>
+                            <div class="project-card-skils ">
+                                ${
+                                    project.techStack.map((skil) => {
+                                        return `<div class="project-card-skil">${skil}</div>`;
+                                    }).join('')
+                                }
+                            </div>
+                            <div class="project-card-links">
+                                <a href="${project.github}">Github</a>
+                                <a href="${project.live}">Live</a>
+                            </div>
+                        </div>
+                    </li>
+        `);
+
+
+        $(".dat-projects-list").append(element);
+    });
+
+    // skills
+
+    
+}
+
+
+
 
 
 
@@ -97,3 +136,33 @@ function closePopup() {
 // })
 
 
+
+
+function setupCas(){
+
+    const cas = new Carousel({
+        parentClass: "project-cas",
+        childClass: "project-card",
+        activeClass: "selected-card",
+        sqx: 3,
+        sqy: 0.5,
+    });
+
+    
+    // card flip
+
+    $('.pj-nav-btn-l').click(function() {
+        cas.move('l');
+    });
+
+    $('.pj-nav-btn-r').click(function() {
+        cas.move('r');
+    });
+
+    //  project card show all button
+    $('.pj-show-all-btn').click(function() {
+        
+    });
+
+
+}
