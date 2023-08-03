@@ -57,10 +57,9 @@ function closePopup() {
 
 
 
-// load contents 
-function loadContents (contents){ 
-    
-    $(".dat-name").text(contents.name);
+// load contents
+function loadContents (contents){
+    $(".dat-name").text(contents.name.toUpperCase());
     $(".dat-subject").text(contents.subject);
 
     // contacts
@@ -113,23 +112,33 @@ function loadContents (contents){
                             </div>
                             <div class="skill-content">
                                 <div class="skill-name">${skill.name}</div>
-                                <dic class="skill-rating">
+                                <div class="skill-rating">
                                     ${
-                                        [0,0,0,0,0].map
+                                        (()=>{
+                                            let stars = '';
+                                            for(let i = 0; i < skill.rating; i++){
+                                                stars += '<img src="./assets/icons/star-solid.svg" alt="" srcset="">';
+                                            }
+                                            return stars;
+                                        })()
                                     }
-                                    <img src="./assets/icons/star-solid.svg" alt="" srcset="">
-                                    <img src="./assets/icons/star-solid.svg" alt="" srcset="">
-                                    <img src="./assets/icons/star-solid.svg" alt="" srcset="">
-                                    <img src="./assets/icons/star-solid.svg" alt="" srcset="">
-                                    <img src="./assets/icons/star-solid.svg" alt="" srcset="">
-                                </dic>   
+                                    
+                                </div>   
                         </div>
                         </div>
                     </div>
         `)
 
+        $(".dat-skills-list").append(skillCard);
+
     })
     
+
+    // footer contacts
+    $(".dat-email").text(contents.contact.email);
+    $(".dat-phone").text(contents.contact.phone);
+    $(".dat-github").text(contents.contact.github.split('/').pop());
+    $(".dat-linkedin").text(contents.contact.linkedin.split('.com/').pop());
     
 }
 

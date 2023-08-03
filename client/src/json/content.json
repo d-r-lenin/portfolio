@@ -5,24 +5,73 @@
         "email":"mail.richardlenin@gmail.com",
         "phone":"+91 6384925940",
         "github":"https://github.com/d-r-lenin",
-        "linkedin":"https://www.linkedin.com/in/richard-lenin-42b64a243/"
+        "linkedin":"https://www.linkedin.com/in/richard-lenin-42b64a243"
     },
     "subject":"Computer Science Student",
     "bio": "I am a Computer Science Student. I am a passionate learner and I love to explore new technologies and leverage them to solve real-life problems. I am currently working on my skills in Web Development",
     "projects":[
         {
-            "name":"Dispatcher",
-            "description":"Web application for online group messaging",
-            "techStack":["NodeJS","ExpressJS","Socket.io"],
-            "github":"https://github.com/d-r-lenin/dispatcher",
-            "live":"https://dispatcher-chat.herokuapp.com/"
+            "name": "Dispatcher",
+            "description": "Web application for online group messaging",
+            "techStack": ["NodeJS", "ExpressJS", "Socket.io"],
+            "github": "https://github.com/d-r-lenin/dispatcher",
+            "live": "https://ecomm-project.richardlenin.com/"
         },
         {
-            "name":"Dispatcher",
-            "description":"Web application for online group messaging",
-            "techStack":["NodeJS","ExpressJS","Socket.io"],
-            "github":"https://github.com/d-r-lenin/dispatcher",
-            "live":"https://dispatcher-chat.herokuapp.com/"
+            "name": "Rapid Preview",
+            "description": "CLI tool that provides a live server for HTML documents",
+            "techStack": ["NodeJS", "ExpressJS", "Socket.io"],
+            "github": "https://github.com/d-r-lenin/rapid-preview",
+            "live": "https://www.npmjs.com/package/rapid-preview"
+        },
+        {
+            "name": "ECOMM Site",
+            "description": "Simple ecommerce web application.",
+            "techStack": ["NodeJS", "ExpressJS", "MongoDB"],
+            "github": "https://github.com/d-r-lenin/ecomm",
+            "live": "https://ecomm-project.richardlenin.com/"
+        },
+        {
+            "name": "Snake Game",
+            "description": "Classic snake game from scratch.",
+            "techStack": ["HTML", "CANVAS", "JavaScript"],
+            "github": "https://github.com/d-r-lenin/snake-game",
+            "live": "https://snake.richardlenin.com/"
+        },
+        {
+            "name": "Dispatcher",
+            "description": "Web application for online group messaging",
+            "techStack": ["NodeJS", "ExpressJS", "Socket.io"],
+            "github": "https://github.com/d-r-lenin/dispatcher",
+            "live": "https://dispatcher-chat.herokuapp.com/"
+        },
+        {
+            "name": "Dispatcher",
+            "description": "Web application for online group messaging",
+            "techStack": ["NodeJS", "ExpressJS", "Socket.io"],
+            "github": "https://github.com/d-r-lenin/dispatcher",
+            "live": "https://dispatcher-chat.herokuapp.com/"
+        },
+        {
+            "name": "Dispatcher",
+            "description": "Web application for online group messaging",
+            "techStack": ["NodeJS", "ExpressJS", "Socket.io"],
+            "github": "https://github.com/d-r-lenin/dispatcher",
+            "live": "https://dispatcher-chat.herokuapp.com/"
+        },
+        {
+            "name": "Dispatcher",
+            "description": "Web application for online group messaging",
+            "techStack": ["NodeJS", "ExpressJS", "Socket.io"],
+            "github": "https://github.com/d-r-lenin/dispatcher",
+            "live": "https://dispatcher-chat.herokuapp.com/"
+        },
+        {
+            "name": "Dispatcher",
+            "description": "Web application for online group messaging",
+            "techStack": ["NodeJS", "ExpressJS", "Socket.io"],
+            "github": "https://github.com/d-r-lenin/dispatcher",
+            "live": "https://dispatcher-chat.herokuapp.com/"
         }
     ],
     "skills":[
@@ -54,7 +103,7 @@
         {
             "name":"ReactJS",
             "level":"Intermediate",
-            "rating":5
+            "rating":3
         },
         {
             "name":"MongoDB",
