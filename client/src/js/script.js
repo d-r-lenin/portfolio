@@ -108,26 +108,24 @@ function loadContents (contents){
         <div class="skill-pad-wrap">
                         <div class="skill-pad">
                             <div class="skill-icon">
-                                <img src="./assets/icons/html5-brands.svg" alt="" srcset="">
+                                <img src="${skill.icon}" alt="" srcset="">
                             </div>
                             <div class="skill-content">
                                 <div class="skill-name">${skill.name}</div>
                                 <div class="skill-rating">
-                                    ${
-                                        (()=>{
-                                            let stars = '';
-                                            for(let i = 0; i < skill.rating; i++){
-                                                stars += '<img src="./assets/icons/star-solid.svg" alt="" srcset="">';
-                                            }
-                                            return stars;
-                                        })()
-                                    }
+                                    ${(() => {
+                                        let stars = "";
+                                        for (let i = 0; i < skill.rating; i++) {
+                                            stars += '<img src="./assets/icons/star-solid.svg" alt="" srcset="">';
+                                        }
+                                        return stars;
+                                    })()}
                                     
-                                </div>   
+                                </div>
                         </div>
                         </div>
                     </div>
-        `)
+        `);
 
         $(".dat-skills-list").append(skillCard);
 
