@@ -1,7 +1,15 @@
+require("dotenv").config();
+require("./pinger")
+require("./keyGen")();
 const { google } = require("googleapis");
+const sendMail = require("./mail");
+
 const auth = new google.auth.GoogleAuth({
-    keyFile: "credin/mineral-actor.json",
-    scopes: ["https://www.googleapis.com/auth/drive"],
+    keyFile: "key.json",
+    scopes: [
+        "https://www.googleapis.com/auth/drive",
+
+    ],
 });
 const service = google.drive({ version: "v3", auth });
 
@@ -71,6 +79,10 @@ app.get("/admin", async (req, res) => {
                 <div id="json-edit"></div>    
                 <input type="submit" />
             </form>
+            <form action="/admin/content/update" id="json-form" method="POST">
+                <textarea name="content" id="json-edit" cols="0" rows="0"></textarea>
+                <input type="submit" />
+            </form>
             <script>
                 const container = document.getElementById("json-edit");
                 const options = {};
@@ -112,7 +124,7 @@ app.post("/admin/content/update", async (req, res) => {
     res.redirect("/admin");
 });
 
-app.get('/content', async (req, res) => {
+app.get("/json/content.json", async (req, res) => {
     // read file content.json from google drive
     const file = await service.files.get({
         fileId: "1HJ0k1x8xQFYMaV-eHoqe-Lren3Kl-Qbl",
@@ -121,6 +133,32 @@ app.get('/content', async (req, res) => {
     res.send(file.data);
 });
 
+app.post("/contact", async (req, res) => {
+    try{
+        const { name, email, message } = req.body;
+
+        const mailOptions = {
+            from: `${name} <${process.env.EMAIL_USERNAME}>`,
+            to: "mail.richardlenin@gmail.com",
+            subject: `Message from ${name} <${email}>`,
+            html: `
+            <h1>Message from ${name}</h1>
+            <p>${message}</p>
+            <br />
+            <br />
+            <p>Contact,</p>
+            <p>${name}</p>
+            <p><a href="mailto:${email}">${email}</a></p>
+            `
+        };
+
+        await sendMail(mailOptions);
+        res.status(200).redirect("/");
+    }catch(err){
+        console.log(err);
+        res.status(500).send("error");
+    }   
+});
 
 app.listen(PORT, () => {
     console.log(" Running on port:" + PORT);
@@ -206,6 +244,6 @@ async function main() {
         fileId: "1HJ0k1x8xQFYMaV-eHoqe-Lren3Kl-Qbl",
         alt: "media",
     });
-    console.log(file.data);
+    // console.log(file.data);
 }
 main().catch(console.error);

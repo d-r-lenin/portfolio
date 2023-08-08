@@ -248,10 +248,11 @@
             <div class="foot-left">
                 <div class="contact-form">
                     <div class="form-title">Contact Me</div>
-                    <form action="">
-                        <input type="text" placeholder="Name">
-                        <input type="email" placeholder="Email">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                    <form action="/contact" id="" method="post" enctype="application/json" >
+                        <input name="name" type="text" placeholder="Name">
+                        <input name="email" type="email" placeholder="Email">
+                        <input name="subject" type="text" style="display: none;" value="contack from portfolio">
+                        <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
                         <button type="submit">Send</button>
                     </form>
                 </div>
