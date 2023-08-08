@@ -5,3 +5,5 @@ server/node_modules
 
 /credin
 key.json
+
+.env
