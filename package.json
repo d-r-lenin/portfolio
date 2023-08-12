@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "npm run build && node ./server/index.js",
+        "start": "node ./server/index.js",
         "dev": "nodemon ./server/index.js",
         "build:sass": "sass  --no-source-map client/src/sass:client/public/src/css",
         "copy:html": "copyfiles -u 1 ./client/src/*.html client/public",
