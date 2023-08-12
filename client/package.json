@@ -21,7 +21,7 @@
     "serve": "browser-sync start --server public --files public",
     "ohtml": "rapidpreview  --port 3003 --file index.html --path ./public",
     "start": "npm-run-all copy --parallel watch ohtml",
-    "build": "npm-run-all copy:html build:*",
+    "build": "npm-run-all copy:* build:sass",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map"
   },
   "dependencies": {

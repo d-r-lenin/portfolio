@@ -21,7 +21,7 @@ const path = require("path");
 const app = express();
 
 // set root folder to client/public
-app.use(express.static(path.join(__dirname, "../client/public")));
+app.use(express.static(path.join(__dirname, "../client/public/src")));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -37,7 +37,7 @@ app.use("/admin", (req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-    res.sendFile("index.html");
+    res.sendFile("../client/public/src/index.html");
 });
 
 app.get("/login", (req, res) => {

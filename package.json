@@ -1,27 +1,55 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node ./server/index.js",
-    "dev": "nodemon ./server/index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@google-cloud/local-auth": "^2.1.1",
-    "axios": "^1.4.0",
-    "cookie-parser": "^1.4.6",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.1",
-    "google-auth-library": "^8.7.0",
-    "googleapis": "^123.0.0",
-    "node-cron": "^3.0.2",
-    "nodemailer": "^6.9.4"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  }
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run build && node ./server/index.js",
+        "dev": "nodemon ./server/index.js",
+        "build:sass": "sass  --no-source-map client/src/sass:client/public/src/css",
+        "copy:html": "copyfiles -u 1 ./client/src/*.html client/public",
+        "copy:pictures": "copyfiles -u 1 ./client/src/assets/**/* client/public",
+        "copy:js": "copyfiles -u 1 ./client/src/js/**/* client/public",
+        "copy:css": "copyfiles -u 1 ./client/src/css/**/* client/public",
+        "copy:json": "copyfiles -u 1 ./client/src/json/**/* client/public",
+        "copy": "npm-run-all --parallel copy:*",
+        "watch:html": "onchange src/*.html -- npm run copy:html",
+        "watch:pictures": "onchange ./client/src/assets/**/* -- npm run copy:pictures",
+        "watch:js": "onchange ./client/src/js/**/* -- npm run copy:js",
+        "watch:css": "onchange ./client/src/css/**/* -- npm run copy:css",
+        "watch:json": "onchange ./client/src/json/**/* -- npm run copy:json",
+        "watch:sass": "sass  --no-source-map --watch src/sass/style.scss:public/css/style.css",
+        "watch": "npm-run-all --parallel watch:*",
+        "serve": "browser-sync start --server client/public --files client/public",
+        "ohtml": "rapidpreview  --port 3003 --file index.html --path ./client/public",
+        "start-cl": "npm-run-all copy --parallel watch ohtml",
+        "build": "npm-run-all copy:* build:*",
+        "postbuild": "postcss client/public/src/css/*.css -u autoprefixer cssnano -r --no-map"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@google-cloud/local-auth": "^2.1.1",
+        "axios": "^1.4.0",
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.1",
+        "google-auth-library": "^8.7.0",
+        "googleapis": "^123.0.0",
+        "node-cron": "^3.0.2",
+        "nodemailer": "^6.9.4",
+        "autoprefixer": "^10.4.2",
+        "browser-sync": "^2.27.10",
+        "copyfiles": "^2.4.1",
+        "cssnano": "^5.0.17",
+        "npm-run-all": "^4.1.5",
+        "onchange": "^7.1.0",
+        "postcss-cli": "^9.1.0",
+        "rapid-preview": "^1.0.4",
+        "sass": "^1.49.8"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
 }
